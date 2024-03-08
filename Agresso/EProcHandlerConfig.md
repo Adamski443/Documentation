@@ -1,7 +1,7 @@
 # Agresso EProc Handler set up and config
 Steps followed to uninstall and re-install EProcurement on development servers
 
-##Prove that the current installation works by resending an existing invoice:
+## Prove that the current installation works by resending an existing invoice:
 
 Log into test instance of ERP7, go to Requisitions Advanced > Marketplace and click on the "Go Shopping" button
 
@@ -74,16 +74,16 @@ EPHandler log:
 
 Demonstrates that currently on the test system the process is working as expected.
 
-##Current Config:
+## Current Config:
 
 EprocHandler sits on the app server, AGRUKIsolator sits on the web server.
 EProc Handler service is running on the app server
 AGRUKIsolator running on IIS web server in it's own application pool
 
-##Update the Configuration for EProcurement version 22.1.1
+## Update the Configuration for EProcurement version 22.1.1
  Before installing take a copy of the current files and folder set up for AGRUKIsolator and the EPHandler.
 
-###AGRUKIsolator on web server
+### AGRUKIsolator on web server
  Copy current directory contents:
 
  C:\Program Files (x86)\UNIT4 eProcurement\AGRUKIsolator
@@ -112,7 +112,7 @@ Open IIS Manager and stop the AGRUKIsolator app pool:
 
 ![Stopped App pool for Isolator](../Images/EProcHandlerConfig/webServerAppPool.png)
 
-###EPHandler on app server
+### EPHandler on app server
 Stop the AGRUK eProcurement File Handler
 
 ![Stopped EPHandler Service](../Images/EProcHandlerConfig/StoppedEPhandler.png)
@@ -196,7 +196,7 @@ The EPHandler log for the service should have started, check it:
 11:31 ePHandlerSvc	: Service started
 ```
 
-###AGRUKIsolator on web server
+### AGRUKIsolator on web server
 
 Make sure iis is stopped on the server
 
@@ -236,11 +236,11 @@ iisreset /start
 
 Make sure the AGRUKIsolator app pool is started.
 
-###Test punching out to the marketplace is working:
+### Test punching out to the marketplace is working:
 
 ![Punchout is working](../Images/EProcHandlerConfig/punchoutWorking.png)
 
-###Test Invoice receiving is working:
+### Test Invoice receiving is working:
 
 Log into test instance of ERP7, go to Requisitions Advanced > Marketplace and click on the "Go Shopping" button
 
@@ -311,7 +311,7 @@ When checking the Marketplace site for the invoice shows that it received a 404 
 
 ![Marketplace Invoice Log](../Images/EProcHandlerConfig/MarketplaceInvoiceLog.png)
 
-###Test sending PO to Marketplace is working
+### Test sending PO to Marketplace is working
 
 Requisition created and saved, converted to a PO, intelagent picks up the PO and puts it in the relevant folder for the UECX process to move it is then processed by EPHandler and sent successfully to the marketplace:
 
@@ -376,7 +376,7 @@ Isolator SQPurchaseOrderProxy log shows:
 2024-03-08T14:46:42 : Process duration : 1.5279555 seconds
 ```
 
-###Conclusion
+### Conclusion
 
 Currently the patch is NOT working for receiving invoices from the marketplace.
 
