@@ -17,7 +17,7 @@ From the marketplace home page user selects Orders > Search > Invoices
 
 ![Marketplace Search Invoices](../Images/EProcHandlerConfig/marketplaceSearchInvoices.png)
 
-In Ivnoices screen select the top invoice by clicking on the invoice number
+In Invoices screen select the top invoice by clicking on the invoice number
 
 ![Find Invoice to Resend](../Images/EProcHandlerConfig/searchForInvoice.png)
 
